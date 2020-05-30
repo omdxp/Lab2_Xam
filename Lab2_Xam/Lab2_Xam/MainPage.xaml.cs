@@ -1,4 +1,5 @@
 ﻿using Lab2_Xam.Models;
+using Lab2_Xam.Pages;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,6 +19,11 @@ namespace Lab2_Xam
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void list_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Navigation.PushModalAsync(new StudentDetails(e.Item as Student));
         }
     }
 }

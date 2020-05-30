@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Lab2_Xam.Models
 {
-    class Student : INotifyPropertyChanged
+    public class Student : INotifyPropertyChanged
     {
         private string name;
         private string surname;

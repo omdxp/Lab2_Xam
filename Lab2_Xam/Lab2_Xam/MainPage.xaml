@@ -12,7 +12,7 @@
     </ContentPage.BindingContext>
     
     <StackLayout>
-        <ListView x:Name="list" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}" SelectionMode="Single">
+        <ListView x:Name="list" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}" SelectionMode="Single" ItemTapped="list_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding StudentID, StringFormat='00{0}'}"/>

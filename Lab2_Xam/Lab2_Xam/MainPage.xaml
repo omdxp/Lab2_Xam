@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Lab2_Xam.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Lab2_Xam.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <ListView x:Name="list" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}" SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding StudentID, StringFormat='00{0}'}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout x:Name="details" BindingContext="{Binding SelectedStudent}">
+            <Label Text="Student ID" />
+            <Label Text="{Binding StudentID, StringFormat='00{0}'}" />
+            <Label Text="Name" />
+            <Entry Text="{Binding Name}"/>
+            <Label Text="Surname" />
+            <Entry Text="{Binding Surname}"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
